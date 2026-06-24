@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Боярский Край — мясная лавка, стейки и овощи в Химках</title>
+  <meta name="description" content="Магазин «Боярский Край» в Химках: охлаждённое и замороженное мясо, стейки, шашлык в маринаде, полуфабрикаты, готовое мясо по предзаказу, овощи и кофе-зона. Адрес: ул. Калинина, д. 7.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Боярский Край — мясная лавка, стейки и овощи в Химках">
+  <meta property="og:description" content="Охлаждённое и замороженное мясо, стейки, шашлык в маринаде, полуфабрикаты, готовое мясо по предзаказу, овощи и кофе-зона.">
+  <meta property="og:image" content="./assets/images/og-image.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://boyarskiy-kray.ru">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Roboto+Slab:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg">
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Боярский Край",
+    "description": "Мясная лавка, стейки, овощи и горячее мясо по предзаказу в Химках",
+    "image": "https://boyarskiy-kray.ru/assets/images/logo.svg",
+    "telephone": "+79031220036",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Калинина, д. 7",
+      "addressLocality": "Химки",
+      "addressRegion": "Московская область",
+      "addressCountry": "RU"
+    },
+    "openingHours": "Mo-Su 10:00-21:00",
+    "url": "https://boyarskiy-kray.ru",
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="header__brand" aria-label="Боярский Край — на главную">
+        <img src="./assets/images/logo.svg" alt="" class="header__logo" width="40" height="40">
+        <span class="header__name">Боярский Край</span>
+      </a>
+
+      <nav class="header__nav" aria-label="Основное меню">
+        <ul class="header__nav-list">
+          <li><a href="#assortment" class="header__nav-link">Ассортимент</a></li>
+          <li><a href="#preorder" class="header__nav-link">Готовим за 30 минут</a></li>
+          <li><a href="#gallery" class="header__nav-link">Фото</a></li>
+          <li><a href="#contacts" class="header__nav-link">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="tel:+79031220036" class="header__phone" data-event="click_phone_header">+7 903 122-00-36</a>
+        <a href="tel:+79031220036" class="btn btn--primary header__call-btn header__call-btn--mobile" data-event="click_phone_header">Позвонить</a>
+        <button class="header__menu-btn" id="menu-btn" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav">
+          <svg class="header__menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="header__mobile-nav" id="mobile-nav" aria-label="Мобильное меню">
+      <ul class="header__mobile-nav-list">
+        <li><a href="#assortment" class="header__mobile-nav-link">Ассортимент</a></li>
+        <li><a href="#preorder" class="header__mobile-nav-link">Готовим за 30 минут</a></li>
+        <li><a href="#gallery" class="header__mobile-nav-link">Фото</a></li>
+        <li><a href="#contacts" class="header__mobile-nav-link">Контакты</a></li>
+        <li><a href="tel:+79031220036" class="header__mobile-nav-link header__mobile-nav-link--cta" data-event="click_phone_header">Позвонить: +7 903 122-00-36</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__content reveal">
+            <span class="hero__badge">Боярский Край · Химки</span>
+            <h1 class="hero__title" id="hero-title">Мясная лавка, <span class="accent">стейки</span> и овощи в Химках</h1>
+            <p class="hero__subtitle">Охлаждённое и замороженное мясо, стейки, шашлык в маринаде, полуфабрикаты, овощи и кофе-зона. Готовим мясо по предзаказу примерно за 30 минут.</p>
+
+            <div class="hero__info">
+              <p class="hero__info-item">
+                <svg class="hero__info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Химки, ул. Калинина, д. 7
+              </p>
+              <p class="hero__info-item">
+                <svg class="hero__info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Ежедневно: 10:00–21:00
+              </p>
+              <p class="hero__info-item">
+                <svg class="hero__info-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <a href="tel:+79031220036" class="hero__info-link" data-event="click_phone_hero">+7 903 122-00-36</a>
+              </p>
+            </div>
+
+            <div class="hero__actions">
+              <a href="tel:+79031220036" class="btn btn--primary btn--large" data-event="click_phone_hero">
+                <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Позвонить
+              </a>
+              <a href="https://yandex.ru/maps/?text=%D0%A5%D0%B8%D0%BC%D0%BA%D0%B8%2C%20%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B0%2C%207" class="btn btn--secondary btn--large" target="_blank" rel="noopener noreferrer" data-event="click_route_hero">
+                <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Построить маршрут
+              </a>
+            </div>
+          </div>
+
+          <div class="hero__image-wrap reveal" data-delay="2">
+            <img
+              src="./assets/images/hero-storefront.svg"
+              alt="Вход в магазин Боярский Край в Химках"
+              class="hero__image"
+              width="900"
+              height="1000"
+              fetchpriority="high"
+            >
+            <div class="hero__floating">
+              <span class="hero__floating-icon" aria-hidden="true">🔥</span>
+              <span>Горячее мясо<small>по предзаказу за ~30 минут</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Assortment -->
+    <section class="section section--cream" id="assortment" aria-labelledby="assortment-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Ассортимент</span>
+          <h2 class="section__title" id="assortment-title">Что у нас есть</h2>
+          <p class="section__subtitle">Мясной магазин в Химках с широким ассортиментом — от стейков до овощей и кофе.</p>
+        </div>
+
+        <div class="cards-grid cards-grid--assortment">
+          <article class="card reveal">
+            <img src="./assets/images/meat-chilled.svg" alt="Охлаждённое мясо в магазине Боярский Край" class="card__image" width="800" height="600" loading="lazy">
+            <span class="card__num">01</span>
+            <div class="card__overlay">
+              <h3 class="card__title">Охлаждённое мясо</h3>
+              <p class="card__text">Свежие позиции для жарки, запекания и домашнего ужина.</p>
+            </div>
+          </article>
+
+          <article class="card reveal" data-delay="1">
+            <img src="./assets/images/steaks.svg" alt="Стейки в магазине Боярский Край" class="card__image" width="800" height="600" loading="lazy">
+            <span class="card__num">02</span>
+            <div class="card__overlay">
+              <h3 class="card__title">Стейки</h3>
+              <p class="card__text">Мясо для сковороды, гриля и мангала. Подскажем, какой кусок выбрать.</p>
+            </div>
+          </article>
+
+          <article class="card reveal" data-delay="2">
+            <img src="./assets/images/meat-frozen.svg" alt="Замороженное мясо в магазине Боярский Край" class="card__image" width="800" height="600" loading="lazy">
+            <span class="card__num">03</span>
+            <div class="card__overlay">
+              <h3 class="card__title">Замороженное мясо</h3>
+              <p class="card__text">Удобный запас домой для быстрых и сытных блюд.</p>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <img src="./assets/images/shashlik.svg" alt="Шашлык в маринаде в магазине Боярский Край" class="card__image" width="800" height="600" loading="lazy">
+            <span class="card__num">04</span>
+            <div class="card__overlay">
+              <h3 class="card__title">Шашлык в маринаде</h3>
+              <p class="card__text">Готовое мясо для мангала, дачи и семейных встреч.</p>
+            </div>
+          </article>
+
+          <article class="card reveal" data-delay="1">
+            <img src="./assets/images/semi-finished.svg" alt="Мясные полуфабрикаты в магазине Боярский Край" class="card__image" width="800" height="600" loading="lazy">
+            <span class="card__num">05</span>
+            <div class="card__overlay">
+              <h3 class="card__title">Мясные полуфабрикаты</h3>
+              <p class="card__text">Заготовки, которые удобно быстро приготовить дома.</p>
+            </div>
+          </article>
+
+          <article class="card reveal" data-delay="2">
+            <img src="./assets/images/vegetables-coffee.svg" alt="Овощи и кофе-зона в магазине Боярский Край" class="card__image" width="800" height="600" loading="lazy">
+            <span class="card__num">06</span>
+            <div class="card__overlay">
+              <h3 class="card__title">Овощи и кофе-зона</h3>
+              <p class="card__text">Овощи к мясу, продукты к столу и кофе на месте.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preorder -->
+    <section class="section section--dark preorder" id="preorder" aria-labelledby="preorder-title">
+      <div class="container">
+        <div class="preorder__grid">
+          <div class="preorder__content reveal">
+            <span class="preorder__icon-wrap">
+              <img src="./assets/icons/grill.svg" alt="" class="preorder__icon" width="40" height="40" aria-hidden="true">
+            </span>
+            <span class="eyebrow">Готовим за 30 минут</span>
+            <h2 class="preorder__title" id="preorder-title">Горячее мясо <span class="accent">к вашему приходу</span></h2>
+            <p class="preorder__text">Позвоните заранее — мы приготовим мясо ориентировочно за 30 минут. Удобно, если нужно быстро забрать горячее блюдо домой, к ужину или к приходу гостей.</p>
+
+            <div class="preorder__steps" aria-label="Как заказать горячее мясо">
+              <div class="preorder__step">
+                <span class="preorder__step-num">1</span>
+                Позвонили
+              </div>
+              <div class="preorder__step">
+                <span class="preorder__step-num">2</span>
+                Выбрали
+              </div>
+              <div class="preorder__step">
+                <span class="preorder__step-num">3</span>
+                Приготовили
+              </div>
+              <div class="preorder__step">
+                <span class="preorder__step-num">4</span>
+                Забрали горячим
+              </div>
+            </div>
+
+            <a href="tel:+79031220036" class="btn btn--light btn--large" data-event="click_phone_preorder">
+              <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Позвонить и заказать
+            </a>
+          </div>
+
+          <div class="preorder__visual reveal" data-delay="2">
+            <img
+              src="./assets/images/ready-meat.svg"
+              alt="Готовое жареное мясо в магазине Боярский Край"
+              class="preorder__image"
+              width="800"
+              height="600"
+              loading="lazy"
+            >
+            <div class="preorder__time-badge" aria-hidden="true">
+              <b>~30</b>
+              <span>минут</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="section" id="use-cases" aria-labelledby="use-cases-title">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <span class="eyebrow">Для каких случаев</span>
+          <h2 class="section__title" id="use-cases-title">Для ужина, шашлыка и гостей</h2>
+          <p class="section__subtitle">Загляните к нам — мясная лавка Химки на ул. Калинина для любого повода.</p>
+        </div>
+
+        <div class="cards-grid cards-grid--use-cases">
+          <article class="use-case-card reveal">
+            <div class="use-case-card__icon" aria-hidden="true">🍽️</div>
+            <h3 class="use-case-card__title">На ужин домой</h3>
+            <p class="use-case-card__text">Стейки, мясо для жарки, овощи и готовая продукция.</p>
+          </article>
+
+          <article class="use-case-card reveal" data-delay="1">
+            <div class="use-case-card__icon" aria-hidden="true">🔥</div>
+            <h3 class="use-case-card__title">На шашлык</h3>
+            <p class="use-case-card__text">Мясо в маринаде и полуфабрикаты для мангала.</p>
+          </article>
+
+          <article class="use-case-card reveal" data-delay="2">
+            <div class="use-case-card__icon" aria-hidden="true">🎉</div>
+            <h3 class="use-case-card__title">К приходу гостей</h3>
+            <p class="use-case-card__text">Можно заказать горячее мясо заранее и забрать к нужному времени.</p>
+          </article>
+
+          <article class="use-case-card reveal" data-delay="3">
+            <div class="use-case-card__icon" aria-hidden="true">☕</div>
+            <h3 class="use-case-card__title">Быстро перекусить</h3>
+            <p class="use-case-card__text">Кофе-зона и готовая продукция на месте.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section section--cream" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Фото магазина</span>
+          <h2 class="section__title" id="gallery-title">Загляните к нам внутрь</h2>
+          <p class="section__subtitle">Магазин мяса на Калинина, 7 ждёт вас каждый день с 10:00 до 21:00.</p>
+        </div>
+
+        <div class="gallery reveal">
+          <figure class="gallery__item">
+            <img src="./assets/images/gallery-entrance.svg" alt="Вход в магазин Боярский Край в Химках" class="gallery__image" width="600" height="450" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="./assets/images/gallery-sign.svg" alt="Вывеска магазина Боярский Край" class="gallery__image" width="600" height="450" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="./assets/images/gallery-interior.svg" alt="Общий вид внутри магазина Боярский Край" class="gallery__image" width="600" height="450" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="./assets/images/gallery-display.svg" alt="Витрина с охлаждённым мясом в магазине Боярский Край" class="gallery__image" width="600" height="450" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="./assets/images/gallery-steaks.svg" alt="Стейки и мясная продукция в магазине Боярский Край" class="gallery__image" width="600" height="450" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="./assets/images/gallery-marinade.svg" alt="Мясо в маринаде в магазине Боярский Край" class="gallery__image" width="600" height="450" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="./assets/images/ready-meat.svg" alt="Готовое жареное мясо в магазине Боярский Край" class="gallery__image" width="600" height="450" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="./assets/images/gallery-vegetables.svg" alt="Овощи и кофе-зона в магазине Боярский Край" class="gallery__image" width="600" height="450" loading="lazy">
+          </figure>
+          <figure class="gallery__item">
+            <img src="./assets/images/gallery-cashier.svg" alt="Кассовая зона магазина Боярский Край" class="gallery__image" width="600" height="450" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section" id="benefits" aria-labelledby="benefits-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Почему к нам заходят</span>
+          <h2 class="section__title" id="benefits-title">Сытно, тепло и по-домашнему</h2>
+          <p class="section__subtitle">Мясная лавка у дома — всё для ужина, праздника и быстрой покупки.</p>
+        </div>
+
+        <div class="benefits">
+          <div class="benefit reveal">
+            <span class="benefit__icon" aria-hidden="true">🥩</span>
+            <p class="benefit__text">Мясо на каждый день и для особого случая</p>
+          </div>
+          <div class="benefit reveal" data-delay="1">
+            <span class="benefit__icon" aria-hidden="true">🥘</span>
+            <p class="benefit__text">Стейки, шашлык и полуфабрикаты</p>
+          </div>
+          <div class="benefit reveal" data-delay="2">
+            <span class="benefit__icon" aria-hidden="true">🔥</span>
+            <p class="benefit__text">Горячее мясо по предзаказу — готовое мясо Химки за ~30 минут</p>
+          </div>
+          <div class="benefit reveal">
+            <span class="benefit__icon" aria-hidden="true">🥬</span>
+            <p class="benefit__text">Овощи и кофе в одном месте</p>
+          </div>
+          <div class="benefit reveal" data-delay="1">
+            <span class="benefit__icon" aria-hidden="true">📍</span>
+            <p class="benefit__text">Удобно для жителей района — овощи Химки, Калинина 7</p>
+          </div>
+          <div class="benefit reveal" data-delay="2">
+            <span class="benefit__icon" aria-hidden="true">💬</span>
+            <p class="benefit__text">Поможем выбрать мясо под способ приготовления</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacts -->
+    <section class="section section--cream" id="contacts" aria-labelledby="contacts-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">Контакты</span>
+          <h2 class="section__title" id="contacts-title">Как нас найти</h2>
+        </div>
+
+        <div class="contacts__grid">
+          <div class="contacts__card contacts__info reveal">
+            <p class="contacts__name">Боярский Край</p>
+            <p class="contacts__detail">
+              <svg class="contacts__detail-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Химки, ул. Калинина, д. 7
+            </p>
+            <p class="contacts__detail">
+              <svg class="contacts__detail-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Ежедневно: 10:00–21:00
+            </p>
+            <p class="contacts__detail">
+              <svg class="contacts__detail-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+79031220036" class="contacts__link" data-event="click_phone_header">+7 903 122-00-36</a>
+            </p>
+
+            <div class="contacts__actions">
+              <a href="tel:+79031220036" class="btn btn--primary btn--large" data-event="click_phone_header">
+                <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Позвонить
+              </a>
+              <a href="https://yandex.ru/maps/?text=%D0%A5%D0%B8%D0%BC%D0%BA%D0%B8%2C%20%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B0%2C%207" class="btn btn--secondary btn--large" target="_blank" rel="noopener noreferrer" data-event="click_route_contacts">
+                <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Построить маршрут
+              </a>
+            </div>
+          </div>
+
+          <div class="contacts__map reveal" data-delay="2">
+            <span class="contacts__map-pin" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <p class="contacts__map-text">Магазин на ул. Калинина, д. 7 в Химках. Нажмите кнопку, чтобы построить маршрут в Яндекс.Картах.</p>
+            <a href="https://yandex.ru/maps/?text=%D0%A5%D0%B8%D0%BC%D0%BA%D0%B8%2C%20%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B0%2C%207" class="btn btn--light btn--large" target="_blank" rel="noopener noreferrer" data-event="click_route_contacts">
+              <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Открыть на карте
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand-row">
+        <img src="./assets/images/logo.svg" alt="" class="footer__logo" width="52" height="52">
+        <p class="footer__brand">Боярский Край</p>
+      </div>
+      <div class="footer__details">
+        <span>Химки, ул. Калинина, д. 7</span>
+        <a href="tel:+79031220036">+7 903 122-00-36</a>
+        <span>Ежедневно: 10:00–21:00</span>
+      </div>
+      <div class="footer__divider"></div>
+      <p class="footer__copyright">&copy; 2026 Боярский Край. Мясная лавка, стейки и овощи в Химках.</p>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky call bar -->
+  <div class="mobile-bar" id="mobile-bar">
+    <a href="tel:+79031220036" class="btn btn--primary" data-event="click_phone_header">
+      <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Позвонить
+    </a>
+    <a href="https://yandex.ru/maps/?text=%D0%A5%D0%B8%D0%BC%D0%BA%D0%B8%2C%20%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B0%2C%207" class="btn btn--secondary" target="_blank" rel="noopener noreferrer" data-event="click_route_hero">
+      <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Маршрут
+    </a>
+  </div>
+
+  <script src="./js/main.js" defer></script>
+</body>
+</html>

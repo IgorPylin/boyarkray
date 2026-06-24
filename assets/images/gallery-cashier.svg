@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Кассовая зона магазина Боярский Край">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0%" stop-color="#4a3322"/><stop offset="100%" stop-color="#1a0f08"/></linearGradient>
+    <radialGradient id="gl" cx="50%" cy="26%" r="72%"><stop offset="0%" stop-color="#ffd79a" stop-opacity="0.45"/><stop offset="60%" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f3d7a4"/><stop offset="100%" stop-color="#c9963f"/></linearGradient>
+    <filter id="gr"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/><rect width="800" height="600" fill="url(#gl)"/>
+  <rect x="220" y="300" width="360" height="160" rx="10" fill="#2c1a0e" opacity="0.7"/>
+  <rect x="260" y="250" width="120" height="70" rx="8" fill="#5e1111" opacity="0.8"/>
+  <g transform="translate(470 280)" fill="none" stroke="url(#gd)" stroke-width="4" opacity="0.7"><circle cx="0" cy="0" r="26"/><path d="M-12 0 h24 M0 -12 v24"/></g>
+  <rect width="800" height="600" filter="url(#gr)" opacity="0.5"/>
+</svg>

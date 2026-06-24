@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Шашлык в маринаде">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0%" stop-color="#9a4516"/><stop offset="100%" stop-color="#3a1606"/></linearGradient>
+    <radialGradient id="gl" cx="50%" cy="30%" r="70%"><stop offset="0%" stop-color="#ffb95e" stop-opacity="0.55"/><stop offset="60%" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <filter id="gr"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/><rect width="800" height="600" fill="url(#gl)"/>
+  <g transform="translate(400 260)" stroke="#f4d9b8" stroke-width="5" stroke-linecap="round" opacity="0.92">
+    <line x1="-150" y1="0" x2="150" y2="0" fill="none"/>
+    <g fill="#f4d9b8" stroke="none" opacity="0.95">
+      <rect x="-110" y="-26" width="52" height="52" rx="16"/><rect x="-30" y="-30" width="60" height="60" rx="18"/><rect x="58" y="-26" width="52" height="52" rx="16"/>
+    </g>
+  </g>
+  <text x="400" y="520" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#f4d9b8" letter-spacing="2" opacity="0.85">ШАШЛЫК В МАРИНАДЕ</text>
+  <rect width="800" height="600" filter="url(#gr)" opacity="0.5"/>
+</svg>

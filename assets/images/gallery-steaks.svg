@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Стейки и мясная продукция в магазине Боярский Край">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0%" stop-color="#8a2a18"/><stop offset="100%" stop-color="#2e0e08"/></linearGradient>
+    <radialGradient id="gl" cx="55%" cy="28%" r="72%"><stop offset="0%" stop-color="#ffb878" stop-opacity="0.5"/><stop offset="60%" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <filter id="gr"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/><rect width="800" height="600" fill="url(#gl)"/>
+  <g fill="#f4d9b8" opacity="0.9">
+    <rect x="150" y="190" width="220" height="130" rx="55"/><rect x="430" y="270" width="220" height="130" rx="55"/>
+  </g>
+  <g fill="none" stroke="#8a2a18" stroke-width="4" opacity="0.5"><path d="M200 240 C260 220 320 224 330 250"/><path d="M480 320 C540 300 600 304 610 330"/></g>
+  <rect width="800" height="600" filter="url(#gr)" opacity="0.5"/>
+</svg>

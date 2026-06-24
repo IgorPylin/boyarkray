@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Охлаждённое мясо">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0%" stop-color="#7a1717"/><stop offset="100%" stop-color="#310c0c"/></linearGradient>
+    <radialGradient id="gl" cx="35%" cy="30%" r="70%"><stop offset="0%" stop-color="#e89a5a" stop-opacity="0.5"/><stop offset="60%" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <filter id="gr"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/><rect width="800" height="600" fill="url(#gl)"/>
+  <g transform="translate(400 270)" fill="none" stroke="#f4d9b8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+    <path d="M-95 5 C-95 -55 -35 -80 25 -70 C90 -58 95 0 70 45 C45 88 -30 92 -70 60 C-92 42 -95 25 -95 5 Z"/>
+    <path d="M-30 -30 C-10 -45 25 -40 40 -15" opacity="0.6"/>
+  </g>
+  <text x="400" y="520" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#f4d9b8" letter-spacing="2" opacity="0.85">ОХЛАЖДЁННОЕ МЯСО</text>
+  <rect width="800" height="600" filter="url(#gr)" opacity="0.5"/>
+</svg>

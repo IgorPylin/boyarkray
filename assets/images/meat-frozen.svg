@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Замороженное мясо">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0%" stop-color="#3f5f72"/><stop offset="100%" stop-color="#16242e"/></linearGradient>
+    <radialGradient id="gl" cx="45%" cy="30%" r="70%"><stop offset="0%" stop-color="#bfe2f0" stop-opacity="0.45"/><stop offset="60%" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <filter id="gr"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/><rect width="800" height="600" fill="url(#gl)"/>
+  <g transform="translate(400 260)" fill="none" stroke="#eaf6fb" stroke-width="5" stroke-linecap="round" opacity="0.9">
+    <line x1="0" y1="-75" x2="0" y2="75"/><line x1="-65" y1="-37" x2="65" y2="37"/><line x1="65" y1="-37" x2="-65" y2="37"/>
+    <path d="M0 -75 l-16 16 M0 -75 l16 16 M0 75 l-16 -16 M0 75 l16 -16"/>
+    <path d="M-65 -37 l2 -22 M-65 -37 l-21 -6 M65 37 l-2 22 M65 37 l21 6 M65 -37 l21 -6 M65 -37 l-2 -22 M-65 37 l-21 6 M-65 37 l2 22"/>
+  </g>
+  <text x="400" y="520" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#eaf6fb" letter-spacing="2" opacity="0.85">ЗАМОРОЖЕННОЕ МЯСО</text>
+  <rect width="800" height="600" filter="url(#gr)" opacity="0.5"/>
+</svg>

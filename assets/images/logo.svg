@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Боярский Край">
+  <defs>
+    <linearGradient id="shield" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A61E1E"/>
+      <stop offset="100%" stop-color="#5e0f0f"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3d7a4"/>
+      <stop offset="100%" stop-color="#c9963f"/>
+    </linearGradient>
+  </defs>
+  <path d="M60 8 L104 26 L104 62 C104 92 86 112 60 122 C34 112 16 92 16 62 L16 26 Z" fill="url(#shield)"/>
+  <path d="M60 8 L104 26 L104 62 C104 92 86 112 60 122 C34 112 16 92 16 62 L16 26 Z" fill="none" stroke="url(#gold)" stroke-width="2.5"/>
+  <path d="M60 20 L94 34 L94 62 C94 86 80 102 60 110 C40 102 26 86 26 62 L26 34 Z" fill="none" stroke="url(#gold)" stroke-width="1" opacity="0.6"/>
+  <text x="60" y="74" text-anchor="middle" font-family="Georgia, serif" font-size="34" font-weight="bold" fill="url(#gold)">БК</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Готовое жареное мясо">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0%" stop-color="#9a3312"/><stop offset="100%" stop-color="#360f06"/></linearGradient>
+    <radialGradient id="gl" cx="50%" cy="34%" r="72%"><stop offset="0%" stop-color="#ffc070" stop-opacity="0.65"/><stop offset="55%" stop-color="#c33d12" stop-opacity="0.2"/><stop offset="100%" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <filter id="gr"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/><rect width="800" height="600" fill="url(#gl)"/>
+  <g transform="translate(400 300)" opacity="0.95">
+    <ellipse cx="0" cy="40" rx="210" ry="70" fill="#000" opacity="0.25"/>
+    <path d="M-150 -10 C-150 -80 -70 -110 10 -100 C120 -86 160 -10 120 60 C80 120 -60 124 -120 80 C-145 60 -150 30 -150 -10 Z" fill="#7a2410"/>
+    <path d="M-120 -20 C-120 -72 -55 -94 20 -84 C100 -72 130 -14 100 44 C70 96 -50 100 -100 64 C-118 50 -120 18 -120 -20 Z" fill="#a8431c"/>
+    <path d="M-70 -36 C-30 -56 40 -50 70 -18" fill="none" stroke="#ffd9a0" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+  </g>
+  <text x="400" y="540" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#ffe2bc" letter-spacing="2" opacity="0.85">ГОТОВОЕ ГОРЯЧЕЕ МЯСО</text>
+  <rect width="800" height="600" filter="url(#gr)" opacity="0.5"/>
+</svg>

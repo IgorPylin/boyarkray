@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1000" viewBox="0 0 900 1000" role="img" aria-label="Вход в магазин Боярский Край в Химках">
+  <defs>
+    <linearGradient id="hbg" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#3a0f0f"/>
+      <stop offset="45%" stop-color="#6b1212"/>
+      <stop offset="100%" stop-color="#2a0c0c"/>
+    </linearGradient>
+    <radialGradient id="hglow" cx="50%" cy="32%" r="60%">
+      <stop offset="0%" stop-color="#d98a4a" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#b03a1a" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hgold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f3d7a4"/>
+      <stop offset="100%" stop-color="#c9963f"/>
+    </linearGradient>
+    <filter id="hgrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.06"/></feComponentTransfer>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="900" height="1000" fill="url(#hbg)"/>
+  <rect width="900" height="1000" fill="url(#hglow)"/>
+  <g opacity="0.9">
+    <rect x="150" y="250" width="600" height="520" rx="14" fill="#1c0808" opacity="0.55"/>
+    <rect x="170" y="270" width="560" height="300" rx="8" fill="#0e0404" opacity="0.6"/>
+    <rect x="170" y="270" width="560" height="300" rx="8" fill="url(#hglow)" opacity="0.5"/>
+  </g>
+  <g transform="translate(450 200)">
+    <path d="M0 -78 L74 -42 L74 36 C74 92 40 132 0 150 C-40 132 -74 92 -74 36 L-74 -42 Z" fill="none" stroke="url(#hgold)" stroke-width="3"/>
+    <text x="0" y="20" text-anchor="middle" font-family="Georgia, serif" font-size="46" font-weight="bold" fill="url(#hgold)">БК</text>
+  </g>
+  <text x="450" y="640" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="bold" fill="#fff6ea" letter-spacing="1">Боярский Край</text>
+  <line x1="330" y1="676" x2="570" y2="676" stroke="url(#hgold)" stroke-width="2"/>
+  <text x="450" y="712" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#e8c89a" letter-spacing="3">МЯСНАЯ ЛАВКА · ХИМКИ</text>
+  <rect width="900" height="1000" filter="url(#hgrain)" opacity="0.5"/>
+</svg>

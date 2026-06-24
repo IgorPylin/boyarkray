@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Мясные полуфабрикаты">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0%" stop-color="#7c3b22"/><stop offset="100%" stop-color="#2c130a"/></linearGradient>
+    <radialGradient id="gl" cx="40%" cy="32%" r="70%"><stop offset="0%" stop-color="#e8a86a" stop-opacity="0.5"/><stop offset="60%" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <filter id="gr"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer><feComposite operator="over" in2="SourceGraphic"/></filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/><rect width="800" height="600" fill="url(#gl)"/>
+  <g transform="translate(400 262)" fill="#f4d9b8" opacity="0.92">
+    <ellipse cx="-78" cy="0" rx="48" ry="44"/><ellipse cx="22" cy="-14" rx="54" ry="48"/><ellipse cx="92" cy="26" rx="44" ry="40"/>
+  </g>
+  <text x="400" y="520" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#f4d9b8" letter-spacing="2" opacity="0.85">ПОЛУФАБРИКАТЫ</text>
+  <rect width="800" height="600" filter="url(#gr)" opacity="0.5"/>
+</svg>
