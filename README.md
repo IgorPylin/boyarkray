@@ -59,9 +59,9 @@ python -m http.server 8765
 ```bash
 ssh root@<IP_DROPLET>
 
-sudo mkdir -p /opt/boyarskiy-kray
-sudo git clone https://github.com/IgorPylin/boyarkray.git /opt/boyarskiy-kray
-cd /opt/boyarskiy-kray
+sudo mkdir -p /opt/apps/boyarskiy-kray
+sudo git clone https://github.com/IgorPylin/boyarkray.git /opt/apps/boyarskiy-kray
+cd /opt/apps/boyarskiy-kray
 
 # создать пользователя deploy (если его ещё нет) и добавить ему публичный ключ:
 sudo adduser --disabled-password --gecos "" deploy
@@ -89,7 +89,7 @@ sudo DEPLOY_USER=deploy bash deploy/setup-docker.sh
 |------------------|-------------------------------------------------------|
 | `DEPLOY_HOST`    | IP Droplet                                            |
 | `DEPLOY_USER`    | `deploy`                                              |
-| `DEPLOY_PATH`    | `/opt/boyarskiy-kray/site`                            |
+| `DEPLOY_PATH`    | `/opt/apps/boyarskiy-kray/site`                       |
 | `DEPLOY_SSH_KEY` | **всё содержимое** приватного ключа                   |
 | `DEPLOY_PORT`    | (необязательно) SSH-порт, если не `22`                |
 

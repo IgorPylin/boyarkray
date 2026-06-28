@@ -8,16 +8,16 @@
 #
 # Запуск на сервере:
 #
-#   sudo mkdir -p /opt/boyarskiy-kray
-#   sudo git clone https://github.com/IgorPylin/boyarkray.git /opt/boyarskiy-kray
-#   cd /opt/boyarskiy-kray
+#   sudo mkdir -p /opt/apps/boyarskiy-kray
+#   sudo git clone https://github.com/IgorPylin/boyarkray.git /opt/apps/boyarskiy-kray
+#   cd /opt/apps/boyarskiy-kray
 #   sudo DEPLOY_USER=deploy bash deploy/setup-docker.sh
 #
 # После этого сайт доступен по http://<IP_СЕРВЕРА>:8080
 
 set -euo pipefail
 
-PROJECT_DIR="${PROJECT_DIR:-/opt/boyarskiy-kray}"
+PROJECT_DIR="${PROJECT_DIR:-/opt/apps/boyarskiy-kray}"
 DEPLOY_USER="${DEPLOY_USER:-deploy}"
 HTTP_PORT="${HTTP_PORT:-8080}"
 
