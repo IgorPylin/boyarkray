@@ -13,10 +13,11 @@ BoyarKray/
 ├── assets/
 │   ├── icons/                 # SVG-иконки
 │   └── images/                # изображения (сейчас SVG-заглушки)
+├── docker-compose.yml         # nginx-контейнер с сайтом
 ├── nginx/
-│   └── boyarskiy-kray.conf    # конфиг nginx для сервера
+│   └── default.conf           # конфиг nginx внутри контейнера
 ├── deploy/
-│   └── setup-server.sh        # первичная настройка Droplet
+│   └── setup-docker.sh        # первичная настройка контейнера на сервере
 └── .github/workflows/
     └── deploy.yml             # автодеплой при пуше в main
 ```
@@ -32,76 +33,70 @@ python -m http.server 8765
 
 ---
 
-## Деплой: GitHub → DigitalOcean (автоматически при пуше в `main`)
+## Деплой: GitHub → DigitalOcean (Docker + Traefik)
 
-Схема: исходники в GitHub → при пуше в `main` GitHub Actions подключается
-к Droplet по SSH и заливает файлы через `rsync`. Сайт раздаёт `nginx`.
+На сервере уже работает **Traefik** (порты 80/443) и проект bbmarket.live.
+Поэтому «Боярский Край» поднимается **отдельным nginx-контейнером** и не мешает
+другим проектам.
 
-### Шаг 1. Создать репозиторий на GitHub и запушить код
+Схема: исходники в GitHub → при пуше в `main` GitHub Actions заливает статику
+по SSH (`rsync`) в папку `site/`, которую раздаёт nginx-контейнер.
 
-```bash
-git init
-git add .
-git commit -m "Initial commit: landing page + deploy"
-git branch -M main
-git remote add origin https://github.com/<USER>/<REPO>.git
-git push -u origin main
-```
+- **Сейчас (без домена):** контейнер опубликован на порт `8080` →
+  сайт доступен по `http://<IP_СЕРВЕРА>:8080`.
+- **Позже (с доменом):** добавляются лейблы Traefik, порт закрывается
+  (см. раздел «Домен и HTTPS»).
 
-### Шаг 2. Создать Droplet в DigitalOcean
+### Шаг 1. Отдельный SSH-ключ для деплоя
 
-- Образ: **Ubuntu 24.04 (LTS)**, самый дешёвый тариф подойдёт.
-- Добавьте свой личный SSH-ключ при создании (для входа на сервер).
-- Запомните **публичный IP** Droplet.
+Сгенерируйте пару ключей и добавьте:
+- **приватный** ключ → в GitHub-секрет `DEPLOY_SSH_KEY`;
+- **публичный** ключ (`.pub`) → в `~/.ssh/authorized_keys` пользователя `deploy`
+  на сервере.
 
-### Шаг 3. Сгенерировать отдельный SSH-ключ для деплоя
-
-На своём компьютере (не на сервере):
-
-```bash
-ssh-keygen -t ed25519 -C "deploy@boyarskiy-kray" -f ./deploy_key -N ""
-```
-
-Получите два файла:
-- `deploy_key` — **приватный** ключ (пойдёт в секрет GitHub `DEPLOY_SSH_KEY`),
-- `deploy_key.pub` — **публичный** ключ (пойдёт на сервер).
-
-> Не коммитьте эти файлы — они уже в `.gitignore`.
-
-### Шаг 4. Настроить сервер (один раз)
-
-Зайдите на Droplet под root и выполните:
+### Шаг 2. Настроить контейнер на сервере (один раз)
 
 ```bash
 ssh root@<IP_DROPLET>
 
-git clone https://github.com/<USER>/<REPO>.git
-cd <REPO>
+sudo mkdir -p /opt/boyarskiy-kray
+sudo git clone https://github.com/IgorPylin/boyarkray.git /opt/boyarskiy-kray
+cd /opt/boyarskiy-kray
 
-# Вставьте СОДЕРЖИМОЕ файла deploy_key.pub в переменную ниже.
-# Домен — необязателен; без него оставьте "_".
-DEPLOY_PUBLIC_KEY="ssh-ed25519 AAAA...вставьте_сюда... deploy@boyarskiy-kray" \
-  bash deploy/setup-server.sh boyarskiy-kray.ru
+# создать пользователя deploy (если его ещё нет) и добавить ему публичный ключ:
+sudo adduser --disabled-password --gecos "" deploy
+sudo install -d -m 700 -o deploy -g deploy /home/deploy/.ssh
+echo "ssh-ed25519 AAAA...ваш_публичный_ключ..." | sudo tee -a /home/deploy/.ssh/authorized_keys
+sudo chown deploy:deploy /home/deploy/.ssh/authorized_keys
+sudo chmod 600 /home/deploy/.ssh/authorized_keys
+
+# поднять контейнер
+sudo DEPLOY_USER=deploy bash deploy/setup-docker.sh
 ```
 
-Скрипт установит nginx, создаст пользователя `deploy`, web-root
-`/var/www/boyarskiy-kray`, добавит публичный ключ и поднимет сайт-заглушку.
+Скрипт создаст `site/`, наполнит её текущим содержимым, откроет порт `8080`
+в ufw и запустит контейнер. Сайт станет доступен на `http://<IP>:8080`.
 
-### Шаг 5. Добавить секреты в GitHub
+> **DigitalOcean firewall:** если на Droplet включён облачный firewall,
+> добавьте inbound-правило **TCP 8080** (публикация Docker-порта может
+> не учитывать ufw).
+
+### Шаг 3. Добавить секреты в GitHub
 
 Репозиторий → **Settings → Secrets and variables → Actions → New repository secret**:
 
 | Секрет           | Значение                                              |
 |------------------|-------------------------------------------------------|
-| `DEPLOY_HOST`    | IP Droplet (или домен)                                |
+| `DEPLOY_HOST`    | IP Droplet                                            |
 | `DEPLOY_USER`    | `deploy`                                              |
-| `DEPLOY_PATH`    | `/var/www/boyarskiy-kray`                             |
-| `DEPLOY_SSH_KEY` | **всё содержимое** приватного `deploy_key`            |
+| `DEPLOY_PATH`    | `/opt/boyarskiy-kray/site`                            |
+| `DEPLOY_SSH_KEY` | **всё содержимое** приватного ключа                   |
 | `DEPLOY_PORT`    | (необязательно) SSH-порт, если не `22`                |
 
-### Шаг 6. Запустить деплой
+### Шаг 4. Запустить деплой
 
-Любой пуш в `main` (или ручной запуск: вкладка **Actions → Deploy to DigitalOcean → Run workflow**) выкатит сайт на сервер.
+Пуш в `main` (или **Actions → Deploy to DigitalOcean → Run workflow**) обновит
+статику в `site/`. nginx отдаёт новые файлы сразу, без перезапуска контейнера.
 
 ```bash
 git commit --allow-empty -m "trigger deploy"
@@ -110,30 +105,30 @@ git push
 
 ---
 
-## Домен и HTTPS
+## Домен и HTTPS (когда домен будет готов)
 
-1. В DNS-настройках домена создайте `A`-запись на IP Droplet
-   (и при желании `www` → тот же IP).
-2. На сервере выпустите бесплатный сертификат Let's Encrypt:
-
-```bash
-apt-get install -y certbot python3-certbot-nginx
-certbot --nginx -d boyarskiy-kray.ru -d www.boyarskiy-kray.ru
-```
-
-Certbot сам пропишет HTTPS в конфиг nginx и настроит автопродление.
-
-3. В `index.html` замените плейсхолдер `https://boyarskiy-kray.ru`
-   в Open Graph и JSON-LD на ваш реальный домен.
+1. Создайте `A`-запись домена на IP Droplet.
+2. В `docker-compose.yml` уберите секцию `ports` и раскомментируйте блок Traefik,
+   подставив из вашего bbmarket-проекта:
+   - имя внешней сети Traefik (`TRAEFIK_NETWORK`);
+   - имя certresolver (`RESOLVER_NAME`);
+   - нужный домен в `Host(...)`.
+3. Пересоздайте контейнер: `docker compose up -d`.
+   Traefik сам выпустит сертификат Let's Encrypt — отдельный certbot не нужен.
+4. Закройте порт `8080`: `sudo ufw delete allow 8080/tcp` и уберите правило
+   из firewall DigitalOcean.
+5. В `index.html` замените плейсхолдер `https://boyarskiy-kray.ru`
+   в Open Graph и JSON-LD на реальный домен.
 
 ---
 
 ## Как работает автодеплой
 
-- `rsync --delete` синхронизирует содержимое репозитория с web-root,
-  удаляя на сервере файлы, которых уже нет в репозитории.
-- Не выгружаются служебные файлы: `.git`, `.github`, `deploy`, `nginx`,
-  `*.md`, `.gitignore` (см. `--exclude` в `.github/workflows/deploy.yml`).
+- `rsync --delete` синхронизирует репозиторий с папкой `site/` на сервере,
+  удаляя файлы, которых уже нет в репозитории.
+- Не выгружаются служебные файлы: `.git`, `.github`, `deploy`, `nginx`, `site`,
+  `docker-compose.yml`, `*.md`, `.gitignore`, `.gitattributes`
+  (см. `--exclude` в `.github/workflows/deploy.yml`).
 - HTML отдаётся без кэша, ассеты (css/js/картинки) кэшируются на 30 дней.
 
 ## Что заменить перед продакшеном

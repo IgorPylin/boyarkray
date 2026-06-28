@@ -43,7 +43,10 @@ jobs:
             --exclude '.github' \
             --exclude 'deploy' \
             --exclude 'nginx' \
+            --exclude 'site' \
+            --exclude 'docker-compose.yml' \
             --exclude '.gitignore' \
+            --exclude '.gitattributes' \
             --exclude '*.md' \
             -e "ssh -i ~/.ssh/deploy_key -p $PORT -o StrictHostKeyChecking=yes" \
             ./ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/"
