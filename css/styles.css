@@ -1066,6 +1066,41 @@ ul {
   max-width: 22rem;
 }
 
+.contacts__map--photo {
+  justify-content: flex-end;
+  padding: 0;
+}
+
+.contacts__map-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.contacts__map--photo .contacts__map-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 2rem 2rem;
+  background: linear-gradient(
+    to top,
+    rgba(12, 6, 3, 0.92) 0%,
+    rgba(12, 6, 3, 0.72) 45%,
+    rgba(12, 6, 3, 0) 100%
+  );
+}
+
+.contacts__map--photo .contacts__map-text {
+  margin-bottom: 1.25rem;
+}
+
 @media (min-width: 880px) {
   .contacts__grid {
     grid-template-columns: 1fr 1fr;
